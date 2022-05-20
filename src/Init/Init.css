@@ -1,0 +1,15 @@
+.poster{
+    width: 129px;
+    height: 193px;
+    margin-left: 46px;
+    margin-bottom: 27px;
+
+}
+
+.cartaz{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    
+}
