@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
 
-export default function Success(){
+export default function Success(dadossucesso){
 
     const  { sucesso }  = useParams();
+    console.log("sucesso")
 
     return(
 <>

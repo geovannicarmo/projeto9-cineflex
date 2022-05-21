@@ -12,6 +12,8 @@ import Success from './success/Success';
 
 
 function App() {
+
+  const dadossucesso={nn:88};
   return (
   <>
 
@@ -23,7 +25,7 @@ function App() {
         <Route path= "/sessao/:sessaoId" element={<Sessao/>} />
         <Route path= "/seats/:seatsId" element={<Seats/>} />
 
-        <Route path = "/success" element={<Success/>}/>
+        <Route path = "/success" element={<Success dadossucesso={dadossucesso}/>}/>
         
 
       </Routes>
