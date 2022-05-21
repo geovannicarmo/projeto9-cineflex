@@ -4,48 +4,16 @@ import { useEffect, useState } from "react"
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
+import Seat from "./Seat"
+
+import Input from "./Input";
+
 
 
 export default function Seats(){
 
-    
-
-
-    function Seat({asento, isAvailable, selected, setarrayslct, arrayslct, arraisl}){
-        
-        const [slct, setSlct] = useState(selected);
-
-          if(slct===true){
-
-            arraisl.push(asento)
-          }
-
-          function jamarcado(){
-            
-                setSlct(false)
-
-                arraisl.splice(arraisl.indexOf(asento), 1);
-          }
-
-          
-        
-        return(
-            <Number habilitado={isAvailable} selecionado={slct} 
-            onClick={()=> isAvailable ? alert("Esse assento não está disponível") : !slct ? setSlct(true) : jamarcado()}>
-                {asento}
-
-               
-            </Number>
-
-        )
-    }
-
      const [asento, setAsento] = useState(null)
      const [movie, setMovie]= useState(null)
-
-     const [arrayslct, setArrayslct]= useState([1])
-    
-
 
      const  { seatsId }  = useParams();
    
@@ -60,7 +28,8 @@ export default function Seats(){
 
 
 const arraisl = []
-const igual1=[]
+const nAsento=[]
+const dadosConfirmacao={name:""}
 
        
     return(
@@ -72,34 +41,26 @@ const igual1=[]
         <></>
         :
         
-        asento.map((asento) => <Seat asento={asento.name}  key={asento.id} isAvailable={asento.isAvailable} selected={false} arrayslct={arrayslct} setArrayslct={setArrayslct} arraisl={arraisl} igual1={igual1}/>
+        asento.map((asento) => <Seat asento={asento.name} nAsento={nAsento} key={asento.id} idAsento={asento.id}  isAvailable={asento.isAvailable} selected={false} arraisl={arraisl} />
        
         )}
         </Fileiras>
+            
+            { !movie ?
+            <></>
+            :
+        <Input ids={arraisl} nAsento={nAsento} hourMovie={movie.name} dayMovie={movie.day.date} title = {movie.movie.title} dadosConfirmacao={dadosConfirmacao} />
+            }
 
-        <img className="poster" src={movie ? movie.movie.posterURL : null} alt="" />  
 
-
+        <img className="poster" src={movie ? movie.movie.posterURL : null} alt="" /> 
         {movie ? <><h1>{movie.day.weekday}</h1> <h1>{movie.name}</h1></> : <></>}
-      
-       <button onClick={()=>(console.log(arraisl))}>TEXTE</button>
 
+       
+   
         </>
     )
 }
-
-
-const Number=styled.div`
-
-background-color: ${props => props.habilitado ? "#FBE192" : !props.selecionado ? "#C3CFD9" : "#8DD7CF"};
-width: 30px;
-height: 30px;
-border-radius: 100%;
-display: flex;
-margin: 5px;
-justify-content: center;
-align-items: center;
-`;
 
 const Fileiras=styled.div`
 display: flex;
@@ -107,3 +68,4 @@ flex-wrap: wrap;
 justify-content: center;
 
 `;
+

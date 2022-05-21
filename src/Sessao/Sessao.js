@@ -14,14 +14,15 @@ export default function Sessao({}){
 
         console.log(hora)
         return(
-            <Horario>
+
             <Link to={`/seats/${id}`}>
-            
-                
+            <Horario>
+              
             <h1>{hora}</h1>
             
-            </Link>
+            
             </Horario>
+            </Link>
         )
     }
 

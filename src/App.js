@@ -24,6 +24,7 @@ function App() {
         <Route path= "/seats/:seatsId" element={<Seats/>} />
 
         <Route path = "/success" element={<Success/>}/>
+        
 
       </Routes>
     

@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 
 export default function Success(){
 
+    const  { sucesso }  = useParams();
+
     return(
 <>
         <Selecione text={"Selecione o(s) assento(s)"}/> 
