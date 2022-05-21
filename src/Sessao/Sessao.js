@@ -15,14 +15,14 @@ export default function Sessao({}){
         console.log(hora)
         return(
 
-            <Link to={`/seats/${id}`}>
+           
             <Horario>
-              
+               <Link to={`/seats/${id}`}>
             <h1>{hora}</h1>
             
-            
-            </Horario>
             </Link>
+            </Horario>
+            
         )
     }
 
@@ -80,6 +80,7 @@ export default function Sessao({}){
 
 const Horario = styled.div`
 width: 40%;
+margin-left: 50px;
 height: 43px;
 background-color: #E8833A;
 margin: 10px;
