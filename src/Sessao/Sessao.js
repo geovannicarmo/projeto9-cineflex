@@ -12,7 +12,7 @@ export default function Sessao({}){
 
     function Hour({hora, id}){
 
-        console.log(hora)
+        
         return(
 
            
@@ -32,8 +32,8 @@ export default function Sessao({}){
         return (
             <>
             <Data>
-                <h1>{dia.weekday}</h1>
-                <h1>{dia.date}</h1>
+                <h1>{dia.weekday} {dia.date}</h1>
+                
                 
             </Data>
             <Data>
@@ -61,7 +61,6 @@ export default function Sessao({}){
 },[])
 
 
-  console.log(movie)
     return(
         <>
         <Selecione text={"Selecione a sessão."}/>
@@ -79,7 +78,7 @@ export default function Sessao({}){
 
 
 const Horario = styled.div`
-width: 40%;
+width: 100%;
 margin-left: 50px;
 height: 43px;
 background-color: #E8833A;
@@ -91,7 +90,7 @@ color: #FFFFFF;
 font-size: 18px;
 
 h1{
-        margin-left: 10px;
+        justify-content: space-between;
 }
 
 `;
@@ -101,4 +100,5 @@ font-size: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
+margin: 8px;
 `;

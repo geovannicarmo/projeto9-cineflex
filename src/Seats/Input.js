@@ -1,24 +1,32 @@
 import  { useState } from "react"
 import axios from "axios";
-import {Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
 
-export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMovie, title}){
+
+
+export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMovie, title, setDadosS}){
 
     const[cpf, setCpf] = useState()
     const[name, setName] = useState()
 
+   
+    let navigate = useNavigate();
+
     function postedate(event){
+
+        
 
             event.preventDefault();
 
             const dados={ids, name, cpf}
 
             const sucesso={title, dayMovie, hourMovie, nAsento, name, cpf}
-            console.log(sucesso)
-            console.log(dados)
-
+            console.log(sucesso);
+            setDadosS({title, dayMovie, hourMovie, nAsento, name, cpf})
+           
+       
             dadosConfirmacao.name=name
 
             const requisicao = axios.post('https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many', dados);
@@ -30,6 +38,8 @@ export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMov
     function tratarSucesso(resposta) {
         const statusCode = resposta.status;
         console.log(statusCode);
+        navigate(`/success/`);
+
     }
     
     function tratarFalha(erro) {
@@ -47,8 +57,9 @@ export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMov
         
         <input placeholder="CPF"  onChange={e => setCpf(e.target.value)} />
 
-        
+      
         <button type="submit">Reservar acento(o)</button>
+       
         </Form>
         </form>
         </>

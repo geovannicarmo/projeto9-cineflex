@@ -16,7 +16,7 @@ export default function Init(){
                     <img className='poster' src= {poster} alt="" />
                 
                     </Link>
-               <h1>{idFilme}</h1>
+               
             </div>
             </>
         )

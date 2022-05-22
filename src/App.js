@@ -7,13 +7,15 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Sessao from './Sessao/Sessao';
 import Seats from './Seats/Seats';
 import Success from './success/Success';
+import { useState } from "react"
 
 
 
 
 function App() {
 
-  const dadossucesso={nn:88};
+  const [dadosS, setDadosS] = useState()
+  
   return (
   <>
 
@@ -23,9 +25,9 @@ function App() {
       <Routes>
       <Route path= "/" element={<Init/>} />
         <Route path= "/sessao/:sessaoId" element={<Sessao/>} />
-        <Route path= "/seats/:seatsId" element={<Seats/>} />
+        <Route path= "/seats/:seatsId" element={<Seats setDadosS={setDadosS}/>} />
 
-        <Route path = "/success" element={<Success dadossucesso={dadossucesso}/>}/>
+        <Route path = "/success" element={<Success dadosS={dadosS}/>} />
         
 
       </Routes>

@@ -10,8 +10,10 @@ import Input from "./Input";
 
 
 
-export default function Seats(){
-
+export default function Seats({setDadosS}){
+  
+  
+ 
      const [asento, setAsento] = useState(null)
      const [movie, setMovie]= useState(null)
 
@@ -49,7 +51,7 @@ const dadosConfirmacao={name:""}
             { !movie ?
             <></>
             :
-        <Input ids={arraisl} nAsento={nAsento} hourMovie={movie.name} dayMovie={movie.day.date} title = {movie.movie.title} dadosConfirmacao={dadosConfirmacao} />
+        <Input ids={arraisl} nAsento={nAsento} hourMovie={movie.name} dayMovie={movie.day.date} title = {movie.movie.title} dadosConfirmacao={dadosConfirmacao} setDadosS={setDadosS} />
             }
 
 
