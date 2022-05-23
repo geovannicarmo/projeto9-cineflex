@@ -11,9 +11,9 @@ export default function Init(){
         
         return(
             <>
-            <div>
+            <div className="borda">
                 <Link to={`/sessao/${idFilme}`}>
-                    <img className='poster' src= {poster} alt="" />
+                    <img className="poster1" src= {poster} alt="" />
                 
                     </Link>
                
@@ -52,4 +52,6 @@ export default function Init(){
 
     )
 }
+
+
 
