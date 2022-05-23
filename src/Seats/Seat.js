@@ -15,7 +15,7 @@ export default function Seat({asento, isAvailable, selected, arraisl, idAsento, 
         
             setSlct(false)
 
-            arraisl.splice(arraisl.indexOf(asento), 1);
+            arraisl.splice(arraisl.indexOf(idAsento), 1);
             nAsento.splice(nAsento.indexOf(asento), 1);
       }
 

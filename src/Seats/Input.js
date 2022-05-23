@@ -13,6 +13,8 @@ export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMov
 
    
     let navigate = useNavigate();
+    console.log(ids)
+    console.log(nAsento)
 
     function postedate(event){
 
