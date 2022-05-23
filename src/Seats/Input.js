@@ -80,6 +80,7 @@ width: 80%;
 height: 50px;
 margin-bottom: 20px;
 margin-top: 20px;
+margin-left:  30px;
 }
 
 button{

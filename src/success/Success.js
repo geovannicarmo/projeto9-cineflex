@@ -14,12 +14,12 @@ function Assentos({assento}){
 
     const cor= true;
     const arrayAssentos=[...dadosS.nAsento]
-    console.log(arrayAssentos)
+
    
 
 
     return(
-<>
+<Container>
         <Selecione text={"Selecione o(s) assento(s)"} cor={cor}/> 
 
         <Texts> 
@@ -30,8 +30,6 @@ function Assentos({assento}){
 
         <h1>Ingressos</h1>
 
-        {/* <h2>Assento {dadosS.nAsento[0]}</h2>
-        <h2>Assento {dadosS.nAsento[2]}</h2> */}
       
 
         {arrayAssentos.map((arrayAssentos, index) => <Assentos assento={arrayAssentos}  key={index}/> 
@@ -43,16 +41,16 @@ function Assentos({assento}){
         <h2>CPF: {dadosS.cpf}</h2>
 
       
-        <Link to={`/`}>
         <Home>
+        <Link to={`/`} >
         <h1 >Voltar pra Home</h1>
            
            
-        </Home>
         </Link>
+        </Home>
         
         </Texts>
-        </>
+        </Container>
     )
 }
 
@@ -83,14 +81,30 @@ height: 42px;
 background-color: #E8833A;
 text-decoration: none;
 margin-left: 30px;
+margin-top: 60px;
+max-width: 250px;
+
+a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
 
 h1{
 font-size: 28px;
 margin-bottom: 20px;
 margin-top: 22x;
-text-decoration: none;
+color: black;
+
 }
 
-
+`
+const Container=styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
 
 `

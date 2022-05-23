@@ -3,6 +3,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import Legend from "./Legend";
 
 import Rodape from "./Rodape"
 
@@ -49,14 +50,24 @@ const dadosConfirmacao={name:""}
        
         )}
         </Fileiras>
-            
+                <Legenda>
+                    <Legend selecionado={true} text={"Selecionado"}/>
+                    <Legend selecionado={false} text={"Disponível"}/>
+                    <Legend selecionado={false} indisponivel={true} text={"Indisponível"}/>
+                </Legenda>
+
+                
             { !movie ?
             <></>
             :
         <Input ids={arraisl} nAsento={nAsento} hourMovie={movie.name} dayMovie={movie.day.date} title = {movie.movie.title} dadosConfirmacao={dadosConfirmacao} setDadosS={setDadosS} />
             }
 
-            
+<>
+    <Space>
+       
+    </Space>
+    </>
 
         { !movie ?
             <></>
@@ -75,3 +86,12 @@ justify-content: center;
 
 `;
 
+const Space = styled.div `
+height: 140px;
+`
+const Legenda = styled.div `
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+margin-bottom: 20px;
+`

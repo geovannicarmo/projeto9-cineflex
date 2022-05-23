@@ -19,9 +19,12 @@ export default function Sessao({}){
            
             <Horario>
                <Link to={`/seats/${id}`}>
+             
+              
             <h1>{hora}</h1>
-            
+           
             </Link>
+           
             </Horario>
             
         )
@@ -70,7 +73,11 @@ export default function Sessao({}){
         
         {days.map((days, index) => <Day dia={days}  key={index}/> 
         )}
-  
+    <>
+    <Space>
+        
+    </Space>
+    </>
 
         { !movie ?
             <></>
@@ -83,16 +90,26 @@ export default function Sessao({}){
 
 
 const Horario = styled.div`
-width: 100%;
+width: 30%;
 margin-left: 50px;
 height: 43px;
 background-color: #E8833A;
 margin: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
 color: #FFFFFF;
 font-size: 18px;
+min-width: 80px;
+max-width: 200px;
+
+a{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
 
 
 h1{
@@ -108,3 +125,7 @@ align-items: center;
 justify-content: center;
 margin: 8px;
 `;
+
+const Space = styled.div `
+height: 140px;
+`

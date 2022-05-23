@@ -7,11 +7,14 @@ export default function Rodape({image, hour, title, day}){
 
     return(
         <Botton>
-       
+       <Img>
         <img src={image} alt="" />
+        </Img>
         <div>
         <h1>{title}</h1>
-        <h1>{day} - {hour}</h1>
+        <h1>{day} 
+        {day ? <> - </>: <></>}
+         {hour}</h1>
         </div>
 
         
@@ -29,18 +32,33 @@ background-color:
 display: flex;
 font-size: 30px;
 align-items: center;
-margin-top: 60px;
+position: fixed;
+bottom: 0px;
+margin-top: 500px;
 
 
 
 img{
-    height: 115px;
-    width: 110px;
-    margin-right: 20px;
+    height: 89px;
+width: 64px;
+   
 }
 
 h1{
     margin-bottom: 10px;
+    font-weight: bold;
 }
+
+`
+
+const Img=styled.div`
+background-color: #FFFFFF;
+height: 99px;
+width: 74px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 15px;
+margin-right: 20px;
 
 `
