@@ -8,8 +8,8 @@ import styled from 'styled-components';
 
 export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMovie, title, setDadosS}){
 
-    const[cpf, setCpf] = useState()
-    const[name, setName] = useState()
+    const[cpf, setCpf] = useState("")
+    const[name, setName] = useState("")
 
    
     let navigate = useNavigate();
@@ -36,10 +36,16 @@ export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMov
     }
 
     function tratarSucesso(resposta) {
+
+        if(name===""||cpf==="" || nAsento.length===0){
+            alert("É necessário preencher nome e CPF e selecionar ao menos 1 assento.")
+
+        }
+        else{
         const statusCode = resposta.status;
         console.log(statusCode);
         navigate(`/success/`);
-
+        }
     }
     
     function tratarFalha(erro) {
@@ -58,7 +64,7 @@ export default function Input({ids, nAsento, dadosConfirmacao, hourMovie, dayMov
         <input placeholder="CPF"  onChange={e => setCpf(e.target.value)} />
 
       
-        <button type="submit">Reservar acento(o)</button>
+        <button type="submit">Reservar assento(s)</button>
        
         </Form>
         </form>
