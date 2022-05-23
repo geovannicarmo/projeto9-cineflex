@@ -5,6 +5,7 @@ import "./Sessao.css"
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import {Link } from "react-router-dom";
+import Rodape from "../Seats/Rodape";
 
 
 export default function Sessao({}){
@@ -69,9 +70,13 @@ export default function Sessao({}){
         
         {days.map((days, index) => <Day dia={days}  key={index}/> 
         )}
+  
 
-        <img className="poster" src={movie.posterURL} alt="" />  
-        <h1>{movie.title}</h1>    
+        { !movie ?
+            <></>
+            :   
+       <Rodape  image={movie.posterURL} hour={movie.name}  title={movie.title} />
+        }
         </>
     )
 }
@@ -88,6 +93,7 @@ align-items: center;
 justify-content: center;
 color: #FFFFFF;
 font-size: 18px;
+
 
 h1{
         justify-content: space-between;

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
+import Rodape from "./Rodape"
+
 import Seat from "./Seat"
 
 import Input from "./Input";
@@ -54,11 +56,13 @@ const dadosConfirmacao={name:""}
         <Input ids={arraisl} nAsento={nAsento} hourMovie={movie.name} dayMovie={movie.day.date} title = {movie.movie.title} dadosConfirmacao={dadosConfirmacao} setDadosS={setDadosS} />
             }
 
+            
 
-        <img className="poster" src={movie ? movie.movie.posterURL : null} alt="" /> 
-        {movie ? <><h1>{movie.day.weekday}</h1> <h1>{movie.name}</h1></> : <></>}
-
-       
+        { !movie ?
+            <></>
+            :   
+       <Rodape  image={movie.movie.posterURL} hour={movie.name}  title={movie.movie.title} day={movie.day.weekday}/>
+        }
    
         </>
     )
